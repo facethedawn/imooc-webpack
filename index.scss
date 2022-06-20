@@ -1,0 +1,19 @@
+body {
+  background-color: gray;
+  .wrap {
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  div:nth-child(odd) {
+    background-color: blue;
+  }
+  div:nth-child(even) {
+    background-color: green;
+  }
+}
+
+
+
