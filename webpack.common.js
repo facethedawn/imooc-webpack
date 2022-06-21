@@ -1,36 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
-const path = require('path');
-
-// presets: [
-//   ['@babel/preset-env',
-//     {
-//       targets: {
-//         edge: "17",
-//         firefox: "60",
-//         chrome: "67",
-//         safari: "11.1",
-//       },
-//       useBuiltIns: 'usage'
-//     }
-//   ]
-// ]
 
 module.exports = {
-  mode: "development",
-  devtool: 'cheap-module-eval-source-map',
-  optimization: {
-    usedExports: true
-  },
   entry: './index.js',
   output: {
-    path: path.resolve(__dirname, 'aaa'),
-    publicPath: '/'
-  },
-  devServer: {
-    contentBase: './dist',
-    hot: true
+    filename: '[name].js',
+    path: __dirname + '/dist'
   },
   module: {
     rules: [
@@ -72,6 +47,5 @@ module.exports = {
       template: "./index.html"
     }),
     new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
   ]
-};
+}
