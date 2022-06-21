@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
-
 // presets: [
 //   ['@babel/preset-env',
 //     {
@@ -19,6 +18,9 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: "development",
+  optimization: {
+    usedExports: true
+  },
   entry: './index.js',
   output: {
     publicPath: '/'
@@ -55,6 +57,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            "presets": ["@babel/preset-react"]
+          }
         }
       }
     ],

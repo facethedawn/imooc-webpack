@@ -1,4 +1,7 @@
 import "@babel/polyfill";
+import React, {Component} from "react";
+import ReactDom from "react-dom";
+import {add} from "./math";
 
 console.log('hello world');
 import "./index.scss";
@@ -39,3 +42,15 @@ const result = arr.map(item => {
 
 
 console.log(result)
+
+
+class App extends Component {
+  render() {
+    return <div>Hello world</div>;
+  }
+}
+
+ReactDom.render(<App />, document.querySelector(".wrap"));
+
+
+add(1,2);
